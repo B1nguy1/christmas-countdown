@@ -8,7 +8,7 @@
     let minutes: number;
     let seconds: number;
     let interval: number;
-    
+
     let differenceBetweenDate = christmasDate - now;
     
     const updateTime = () => {
@@ -31,10 +31,14 @@
 </script>
 
 <main>
-<p>
-    {days} dager og {hours} timer : {minutes} minutter : {seconds} sekunder
-</p>
-<p> Det er {days} dager til 🌲🎅🏻 </p>
+{#if days + hours + minutes + seconds <= 0}
+    <p>Det er over. </p>
+{:else}
+    <p>
+        {days} dager og {hours} timer : {minutes} minutter : {seconds} sekunder
+    </p>
+    <p> Det er {days} dager til 🌲🎅🏻 </p>
+{/if}
 </main>
 
 <style>
