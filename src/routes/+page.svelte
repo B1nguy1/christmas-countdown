@@ -2,17 +2,19 @@
     import { onMount } from "svelte";
 
     let christmasDate = new Date('2024-12-24T00:00:00').getTime();
-    let differenceBetweenDate = christmasDate - new Date().getTime();
+    let now = new Date().getTime();
+    let differenceBetweenDate = christmasDate - now;
     let days: number;
     let hours: number;
     let minutes: number;
     let seconds: number;
     let interval: number;
     
+    const updateTime = () => {
+        differenceBetweenDate = christmasDate - now
+    }
+
     onMount(() => {
-        const updateTime = () => {
-            differenceBetweenDate = christmasDate - new Date().getTime();
-        }
         interval = setInterval(() => { updateTime() }, 1000);
 
         return () =>  {
