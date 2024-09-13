@@ -3,16 +3,17 @@
 
     let christmasDate = new Date('2024-12-24T00:00:00').getTime();
     let now = new Date().getTime();
-    let differenceBetweenDate = christmasDate - now;
     let days: number;
     let hours: number;
     let minutes: number;
     let seconds: number;
     let interval: number;
     
+    let differenceBetweenDate = christmasDate - now;
+    
     const updateTime = () => {
-        differenceBetweenDate = christmasDate - now;
-    }
+        differenceBetweenDate = christmasDate - new Date().getTime();
+        }
 
     onMount(() => {
         interval = setInterval(() => { updateTime() }, 1000);
