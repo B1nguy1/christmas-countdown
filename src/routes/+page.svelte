@@ -11,7 +11,7 @@
     let interval: number;
     
     const updateTime = () => {
-        differenceBetweenDate = christmasDate - now
+        differenceBetweenDate = christmasDate - now;
     }
 
     onMount(() => {
